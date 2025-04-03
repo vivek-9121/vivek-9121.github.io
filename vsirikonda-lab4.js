@@ -1,5 +1,5 @@
 // vivek sirikonda
-o // ITMD 541-01 Graduate Student
+ // ITMD 541-01 Graduate Student
 (function studentWebPageUpdate() {
     // Change the main heading in the hero section
     const mainHeading = document.querySelector(".text-4xl.font-bold.mb-4.text-white.relative.z-20");

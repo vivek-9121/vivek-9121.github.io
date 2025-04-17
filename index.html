@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Tip Calculator</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+</head>
+<body>
+
+  <div class="box-container">
+    <h5>ITMD 541 Lab-5 Tip Calculator</h5>
+    <h1>
+      <span class="material-symbols-outlined" style="font-size: 32px; vertical-align: middle; margin-right: 10px;">
+        calculate
+      </span>
+      <b>Tip Calculator</b>
+    </h1>
+
+    <p>
+      Currency Conversion:<br><br>
+      $1 USD = €0.95 EUR for Euros<br><br>
+      $1 USD = ₹85 INR for Rupees
+    </p>
+
+    <form id="form" class="form">
+      <label for="bill_total">Bill Total: $</label>
+      <input type="text" id="bill_total" name="bill_total" />
+      <p id="error"></p>
+
+      <label for="bill_total_withTax">Total Bill With Tax (11%):</label>
+      <input type="text" id="bill_total_withTax" name="bill_total_withTax" disabled />
+
+      <label for="currency">Select Currency:</label>
+      <select id="currency" name="currency">
+        <option value="Dollars">US Dollars ($)</option>
+        <option value="Euro">Europe Euro (€)</option>
+        <option value="Rupee">Indian Rupee (₹)</option>
+      </select>
+
+      <label for="tip">Tip:</label>
+      <input type="range" id="tip" name="tip" min="0" max="100" step="1" value="0" />
+      <span id="Tip_value">0%</span>
+
+      <label for="converted">Converted Tip Amount:</label>
+      <input type="text" placeholder="0.00" id="converted" name="converted" disabled />
+
+      <label for="converted_tax">Converted Bill with Tip and Tax:</label>
+      <input type="text" placeholder="0.00" id="converted_tax" name="converted_tax" disabled />
+    </form>
+  </div>
+
+  <script>
+    const tipSlider = document.getElementById("tip");
+    const tipValue = document.getElementById("Tip_value");
+
+    tipSlider.addEventListener("input", () => {
+      tipValue.textContent = tipSlider.value + "%";
+      tipValue.classList.add("animate-tip");
+
+      setTimeout(() => {
+        tipValue.classList.remove("animate-tip");
+      }, 300);
+    });
+  </script>
+
+  <script src="app.js"></script>
+  <p style="display:none;">Last deployed: Apr 16</p>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sunrise & Sunset Dashboard</title>
+  <link rel="stylesheet" href="styles.css"> <!-- Linking the external CSS file -->
+</head>
+<body>
+  <!-- Header section with the title -->
+  <header>
+    <h1>Sunrise & Sunset Times</h1>
+  </header>
+
+  <main>
+    <!-- Controls section to allow the user to choose a location or use current location -->
+    <div class="controls">
+      <!-- Dropdown list to select a location -->
+      <select id="locationSelect">
+        <option disabled selected>Select a location</option>
+      </select>
+      <!-- Button to use the user's current geolocation -->
+      <button id="currentLocationBtn">Use Current Location</button>
+    </div>
+
+    <!-- Dashboard to display data for today and tomorrow -->
+    <div id="dashboard">
+      <!-- Card to display data for today -->
+      <div class="card" id="todayCard">
+        <h2>Today</h2>
+        <div class="data">Waiting for data...</div>
+      </div>
+
+      <!-- Card to display data for tomorrow -->
+      <div class="card" id="tomorrowCard">
+        <h2>Tomorrow</h2>
+        <div class="data">Waiting for data...</div>
+      </div>
+    </div>
+
+    <!-- Error message container -->
+    <div id="error" class="hidden"></div>
+  </main>
+
+  <!-- Footer with a credit link to the data provider -->
+  <footer>
+    Data provided by <a href="https://sunrisesunset.io/api/" style="color:#a7ffeb;">sunrisesunset.io</a>
+  </footer>
+
+  <!-- Linking the external JavaScript file -->
+  <script src="script.js"></script>
+</body>
+</html>
